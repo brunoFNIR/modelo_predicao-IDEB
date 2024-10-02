@@ -6,8 +6,11 @@ import mlflow
 import os
 
 def read_data():
-    df = pd.read_csv('br_inep_ideb_brasil.csv')
-    df = df.drop('projecao', axis=1)
+    url = 'raw.githubusercontent.com'
+    username = 'brunoFNIR'
+    repository = 'modelo_predicao-IDEB'
+    file_name = 'br_inep_ideb_brasil.csv'
+    df = pd.read_csv(f'https://{url}/{username}/{repository}/main/{file_name}')
 
     df = df.drop([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26], axis=0)
 
